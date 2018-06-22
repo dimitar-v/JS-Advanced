@@ -25,7 +25,7 @@ function createBook(selector, title, author, isbn) {
             .text('Deselect')
             .click(deselect))
 
-        .appendTo(selector);
+        .appendTo($(selector));
 
     function select() {
         div.attr('style','border: 2px solid blue;')
