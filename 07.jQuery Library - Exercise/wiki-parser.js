@@ -5,7 +5,7 @@ function wikiParser(selector) {
     let h1Regex = /=(.*?)=/g;
     let boldRegex = /'''(.*?)'''/g;
     let italicRegex = /''(.*?)''/g;
-    let linkRegex =  /\[\[([^\[\]]+?)]]/g;   // /\[\[(.*?)]]/g;
+    let linkRegex =  /\[\[([^\[\]]+?)]]/g;   // /\[\[(.*?)]]/g; ?? =>> "Normal text[ [ [[hyperlink]] [[not a hyperlink] ] [[still not[ a hyperlink]]"
 
     let html = wiki.text()
         .replace(h3Regex, (t, g1) => `<h3>${g1}</h3>`)
