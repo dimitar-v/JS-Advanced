@@ -24,20 +24,21 @@
             S:'\u2660'
         };
         let cards = [];
+        let displayCard = (card) => $('<div>').addClass('card').text(card)
+            .on('click', reverseCards)
+            .appendTo(container);
+
         function addCard(face, suit) {
             let card = face+' '+ suits[suit];
             cards.push(card);
-            $('<div>').addClass('card').text(card)
-                .on('click', reverseCards)
-                .appendTo(container);
+            displayCard(card);
         }
+
         function reverseCards(){
             container.empty();
-            cards.reverse().forEach(c =>
-                $('<div>').addClass('card').text(c)
-                    .on('click', reverseCards)
-                    .appendTo(container));
+            cards.reverse().forEach(c => displayCard(c));
         }
+
         return {addCard}
     }
 </script>
