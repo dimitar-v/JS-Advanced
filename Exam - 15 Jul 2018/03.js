@@ -49,7 +49,8 @@ class BookCollection {
         if (!this.shelf.length)
             return "It's an empty shelf";
 
-        return `"${this.shelfGenre}" shelf in ${this.room} contains:\n` + this.shelf.map(b => `\uD83D\uDCD6 "${b.bookName}" - ${b.bookAuthor}`).join('\n');
+        return `"${this.shelfGenre}" shelf in ${this.room} contains:\n`
+            + this.shelf.map(b => `\uD83D\uDCD6 "${b.bookName}" - ${b.bookAuthor}`).join('\n');
     }
 
     throwAwayBook(bookName){
@@ -57,7 +58,8 @@ class BookCollection {
     }
 
     showBooks(genre){
-        return `Results for search "${genre}":\n` + this.shelf.filter(b => b.genre === genre).map(b => `\uD83D\uDCD6 ${b.bookAuthor} - "${b.bookName}"`).join('\n');
+        return `Results for search "${genre}":\n`
+            + this.shelf.filter(b => b.genre === genre).map(b => `\uD83D\uDCD6 ${b.bookAuthor} - "${b.bookName}"`).join('\n');
     }
 }
 

@@ -35,12 +35,9 @@ function onlineShop(selector) {
         firstField.on('keyup', function () {
             if (firstField.val() !== ''){
                 button.prop('disabled', false);
-                // inputPrice.prop('disabled', false);
-                // inputQuantity.prop('disabled', false);
             }
             else{
                 button.prop('disabled', true);
-
             }
         });
 
@@ -65,8 +62,6 @@ function onlineShop(selector) {
             inputQuantity.val('1');
             inputPrice.val('1');
             button.prop('disabled', true);
-            // inputPrice.prop('disabled', true);
-            // inputQuantity.prop('disabled', true);
         });
 
     }
